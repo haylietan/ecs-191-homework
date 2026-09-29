@@ -1,7 +1,9 @@
 Haylie Tan |
 ECS 191 |
 Professor Sam King |
-October 1, 2026
+October 1, 2026 |
+Github: @haylietan |
+Repo: https://github.com/haylietan/ecs-191-homework
 
 # Homework: Proposal
 ### The app. Which app are you cloning?
