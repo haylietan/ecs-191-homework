@@ -1,4 +1,4 @@
-# Setlog (ECS 191 clone)
+# Yday (SetLog Remake/Replica)
 
 The app that I am choosing to clone is Setlog, a Korean mini-vlog mobile app. This app allows users to share short two-second clips with their friends for each hour of the day. I love how simple it makes keeping up with your friends, so I wanted to build my own version of it. My version is a native iOS app written in Swift.
 
