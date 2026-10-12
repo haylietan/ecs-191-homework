@@ -1,16 +1,16 @@
 # Setlog (ECS 191 clone)
 
-The app that I am choosing to clone is Setlog, a Korean mini-vlog mobile app. This app allows users to share short two-second clips with their friends for each hour of the day. I love how simple it makes keeping up with your friends, so I wanted to build my own version of it. My version is a native iOS app written in Swift with SwiftUI. It only uses Apple frameworks (SwiftUI, UIKit, AVFoundation, Photos, Observation) and has no third-party dependencies.
+The app that I am choosing to clone is Setlog, a Korean mini-vlog mobile app. This app allows users to share short two-second clips with their friends for each hour of the day. I love how simple it makes keeping up with your friends, so I wanted to build my own version of it. My version is a native iOS app written in Swift.
 
 ## How to Build and Run the App
 
-You'll need a Mac with Xcode 16 or newer. I built it with Xcode 27. The app targets iOS 18, so make sure the phone/simulator you use is on iOS 18 or later.
+To build and run the app, you will need a Mac with Xcode 16 or newer. I built it with Xcode 27. The app targets iOS 18, so make sure the phone/simulator you use is on iOS 18 or later.
 
 ### In Xcode (easiest)
 1. Clone the repo and open the project:
    ```bash
-   git clone https://github.com/haylietan/ecs-191-homework.git
-   cd ecs-191-homework
+   git clone https://github.com/haylietan/yday.git
+   cd yday
    open Setlog/Setlog.xcodeproj
    ```
 2. Pick the Setlog scheme and an iPhone simulator running iOS 18+ from the toolbar. If you only see older simulators, you can download a newer one in Xcode --> Settings --> Components.
@@ -47,20 +47,20 @@ I also added a couple of launch arguments you can set in Xcode (Product --> Sche
 There are four tabs along the bottom: Vlog, 2s Take, Dial, and Archive. At the top, there's a room picker (like "Room 01 · 262"), your time zone, and a little clock icon with a ring that slowly fills up as your day goes on.
 
 ### Rooms
-Rooms are small, private groups, similar to the close friends feature on Instagram. I think this is one of the best parts of Setlog, because having fewer people watching takes away a lot of the pressure behind posting. The app comes with three rooms (based off my own friend groups):
+Rooms are small and private groups of users, kind of similar to the close friends feature on Instagram. I think this is one of the best parts of Setlog, because having fewer people watch your vlogs takes away a lot of the pressure behind posting. The app also comes with three rooms as default (based off my own friend groups):
 
 - 262 housemates
 - 7 baddies 5 porche
 - saja boys
 
-Choosing a room in the header changes which friends you see on the Dial page. When you record a take, you get to decide which rooms can see it.
+Choosing a room in the header changes which friends you see on the Dial page. When you record a take, you get to decide which rooms can see it through the picker as well.
 
 ### Vlog (home page)
 This is the first page you see when you open the app. It plays all of your takes from the day back to back, so your day comes together as one little vlog.
 
-The bar at the top has one segment for each take. You can tap the video to pause it and use the speaker button to mute it. The arrows at the top let you look back at earlier days. Under the video, Daily Chapters shows a thumbnail for every take, and you can tap any of them to jump straight to it.
+The bar at the top has one segment for each take. You can tap the video to pause it and use the speaker button to mute it. The arrows at the top let you look back at earlier days. Under the video, Daily Chapters shows a thumbnail for every take, so you can tap any of them to jump straight to it.
 
-Save Day Vlog puts the whole day together into one vertical video and saves it to your camera roll. Share does the same thing, but opens the share sheet so you can send it to someone. Landscape takes get bars above and below so they still fit nicely in the vertical video.
+Save Day Vlog puts the whole day together into one vertical video and saves it to your camera roll. Share does the same thing, but opens the share sheet so you can send it to someone. Landscape takes get borders above and below the video so they still fit nicely in the vertical video.
 
 ### 2s Take (camera)
 1. The chip in the top left (like "22:00 SLOT") shows which hour you're recording for. You get one take per hour.
@@ -69,35 +69,35 @@ Save Day Vlog puts the whole day together into one vertical video and saves it t
 4. Tap or hold the shutter. It records exactly 2 seconds and stops on its own, and the ring around the button fills up while it's recording.
 5. A little message will pop up letting you know which rooms it was sent to.
 
-There's also a flash button (back camera only), a flip button to switch cameras, and a pill in the corner that says PORTRAIT or LANDSCAPE. On a real phone, it follows how you're holding it, so you can film whichever way feels natural. In the Simulator, you can tap it to switch.
+There's also a flash button (back camera only), a flip button to switch cameras, and a badge in the corner that says PORTRAIT or LANDSCAPE. On a real phone, it follows how you're holding it, so you can film whichever way feels natural. In the Simulator, since you can't do that, you can tap it to switch it.
 
-Once you've taken your clip for the hour, the camera locks until the next hour starts. There are no retakes, and that's intentional. I want each take to be a real, unpolished and authentic moment from your day.
+Once you've taken your clip for the hour, the camera immediately locks until the next hour starts. There are no retakes which is intentional. I want each take to be a real and authentic and prevent users from over-curating their content.
 
 ### Dial
 This page gives you an overview of your whole day.
 
-The big ring has 24 segments, one for each hour. The pink ones are hours you've captured, and the dark dot shows where you are right now. Under it, you can see how many slots are left today and how long until the next one opens.
+The big ring has 24 segments, one for each hour of the day. The pink ones are hours you've captured, and the dark dot shows where you are right now. Under it, you can see how many slots are left today and how long until the next one opens.
 
-Below that, there's a small prompt for the current hour, like "Silo lunch, honestly" or "Golden hour in the Arboretum," to give you a little inspiration. The button takes you to the camera, or to today's vlog if you've already taken your clip.
+Below that, there's a small prompt for the current hour, like "Silo lunch, honestly" or "Golden hour in the Arboretum," to give you a little inspiration. The button takes you to the camera or to today's vlog if you've already taken your clip.
 
-At the bottom, Recent Room Moments shows your own takes and your friends' posts for whichever room you have selected.
+At the bottom, Recent Room Moments shows your own takes and your friends' posts for whichever room you have selected in the picker above.
 
 ### Archive
-This is a calendar of every day you've logged, and it's my favorite way to look back on past memories. You can use the arrows to switch between months. The top shows how many seconds you logged that month, how many takes you recorded, and your retakes (which will always be 0).
+This is a calendar of every day you've logged, and it serves as a way for users to look back on past memories. You can use the arrows to switch between months. The top shows how many seconds you logged that month, how many takes you recorded, and your retakes (which will always be 0).
 
 Days with takes are highlighted, and the little ring on each day shows how much of it you captured. Tap a day to see a preview, then press Play Vlog to rewatch it or the share button to send it to someone.
 
 ## What I Kept and Changed From the Original
 
-I kept the heart of Setlog: a 2-second clip for each hour of the day, small private rooms, each day's clips coming together into one video, and a calendar where you can reminisce about past days.
+I kept the core feature of Setlog, which as a 2-second clip for each hour of the day with small private rooms. Each day's clips are able to be compiled together into one video. And I added calendar where you can look back into past days.
 
 Like I mentioned in my proposal, I also made a few changes:
 
-- You can't retake a clip. I think the whole purpose of the app is to be unpolished, and being able to retake videos only adds to overthinking.
+- You can't retake a clip. I think the whole purpose of the app is to be real and being able to retake videos only adds to overthinking/over-curating of content.
 - I removed comments and reactions. I want users to focus on documenting their day without feeling like they need to show support to everyone else. My goal is to make documenting daily life feel like second nature.
-- You can record in portrait or landscape. The original only accepts horizontal recordings, so this gives you a little more freedom.
+- You can record in portrait or landscape. The original app SetLog only accepts horizontal recordings, so this gives you a little more freedom.
 
-For the design, I went with a soft blush pink background, white cards with black outlines, and dusty rose accents. I wanted it to feel calm and cozy, like a little diary.
+For the design, I went with a pink background, white cards with black outlines, and reddish pink accents. My goal was to make it feel calm and cozy.
 
 ## Project Structure
 
